@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			ul{
+				width: 200px;
+				height: 300px;
+				border: 1px solid #000;
+			}
+			#text{
+				width: 170px;
+				height: 30px;
+				outline: none;
+				border: 1px solid deepskyblue;
+				color: blue;
+			}
+			#btn{
+				width: 70px;
+				height: 35px;
+				background-color: darkcyan;
+				color: #FFFF99;
+				outline: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<ul>                  
+			<li>我是第一<a href="javascript:;">删除</a></li>
+			<li>我是第二<a href="javascript:;">删除</a></li>
+			<li>我是第三<a href="javascript:;">删除</a></li>
+			<li>我是第四<a href="javascript:;">删除</a></li>
+			<li>我是第五<a href="javascript:;">删除</a></li>
+		</ul>
+		
+		<input type="text"  id="text"  />
+		<input type="button" value="点击发送" id='btn'/>
+		<script>
+			var aUl = document.getElementsByTagName('ul')[0];
+			var aIpt = document.getElementsByTagName('input');
+			aIpt[0].focus()
+			//获取内容
+			aIpt[1].onclick = function(){
+				aUl.innerHTML+='<li>'+aIpt[0].value+'<a href="javascript:;" />删除</a></li>';
+			}
+			
+			aUl.onclick = function(e){
+				//获取事件
+				e = e||event;
+				
+				//获取当前事件源
+				var target = e.target||e.srvElement;
+				//如果点击事件源伟a标签，则删除a节点的父级元素
+				if(target.nodeName =='A'){
+				this.removeChild(target.parentNode);
+				}
+			}
+			
+		</script>
+	</body>
+</html>

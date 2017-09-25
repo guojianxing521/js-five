@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				height: 2000px;
+			}
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				width: 100px;
+				height: 180px;
+				list-style: none;
+				display: none;
+				margin: 0 auto;
+			}
+			h2{
+				width: 100px;
+				height: 30px;
+				background-color: skyblue;
+				text-align: center;
+				color: #fff;
+				margin: 0 auto;
+			
+			}
+			
+			li{
+				height: 30px;
+				width: 100px;
+				background-color:pink;
+				text-align: center;
+				
+		
+			}
+		</style>
+	</head>
+	<body>
+	        <h2>下拉</h2>
+		<ul>
+			<li>头像</li>
+			<li>相册</li>
+			<li>大师傅</li>
+			<li>我们</li>
+			<li>你好</li>
+		</ul>
+		
+	</body>
+	<script>
+		var aH2 = document.getElementsByTagName('h2')[0];
+		var aUl = document.getElementsByTagName('ul')[0];
+		//设置开关
+		var onoff = true;
+		//给H2添加点击事件
+		aH2.onclick = function(e){
+			
+			//重点
+			//清除冒泡事件
+			e=e||event;//或者  e=window.event ||e;
+			//事件下边的一个属性
+			e.cancelBubble = true;
+			
+			if(onoff){
+				aUl.style.display = 'block';
+			}else{
+				aUl.style.display = 'none';
+			}
+			onoff=!onoff;
+			
+		}
+		
+//		document.body.onclick = function(){
+//			aUl.style.display = 'none';
+//			onoff = true;
+//			
+//			
+//		}
+		document.onclick = function(){
+			aUl.style.display = 'none';
+			onoff = true;
+			
+			
+		}
+	</script>
+</html>

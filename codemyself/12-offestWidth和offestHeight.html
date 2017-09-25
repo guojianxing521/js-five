@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				padding: 50px;
+				border: 10px solid blue;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>box</div>
+		<script>
+			//自身定义的宽 + 左右padding + 左右border
+		var aDiv = document.getElementsByTagName('div')[0];
+		console.log(aDiv.offsetHeight);//100+100+10*2
+		console.log(aDiv.offsetWidth);//100+100+10*2
+		//自身定义的宽 + 左右padding 
+		console.log(aDiv.clientHeight);//100+100
+		console.log(aDiv.clientWidth);//100+100
+//		自身左 border
+		console.log(aDiv.clientLeft);//10
+		console.log(aDiv.clientTop);//10
+		</script>
+	</body>
+</html>
